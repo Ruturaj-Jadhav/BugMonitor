@@ -1,4 +1,6 @@
 package com.pgs.BugMonitor.controller;
+import com.pgs.BugMonitor.entity.Bug;
+import com.pgs.BugMonitor.repo.BugRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,15 @@ public class ProjectManagerController {
 
     @Autowired
     private ProjectRepo projectRepo;
+
+    @Autowired
+    private BugRepo bugRepo;
+
+    // Get all bugs
+    @GetMapping("/bugs")
+    public List<Bug> getAllBugs() {
+        return bugRepo.findAll();
+    }
 
     // View all projects
     @GetMapping
