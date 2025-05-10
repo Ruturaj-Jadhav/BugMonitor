@@ -30,18 +30,18 @@ public class Bug {
     @Column(name = "Status")
     private String status;
 
-    @Column(name = "ResolvedDate")
+    @Column(name = "RESOLVEDDATE")
     private java.sql.Date resolvedDate;
 
-    @Column(name = "Due")
+    @Column(name = "DUE")
     private java.sql.Date due;
 
     @ManyToOne
-    @JoinColumn(name = "AssignedTo", referencedColumnName = "UserID")
+    @JoinColumn(name = "ASSIGNEDTO", referencedColumnName = "UserID")
     private Users assignedTo;
 
     @ManyToOne
-    @JoinColumn(name = "CreatedBy", referencedColumnName = "UserID")
+    @JoinColumn(name = "CREATEDBY", referencedColumnName = "UserID")
     private Users createdBy;
 
     @ManyToOne
